@@ -1,0 +1,15 @@
+language: node_js
+node_js: stable
+
+env:
+  global:
+    - "AZURE_WA_USERNAME=$AZURE_WA_USERNAME"
+    - "AZURE_WA_PASSWORD=$AZURE_WA_PASSWORD"
+
+  script: 
+  - cd wwwroot
+  - zip -r wwwroot.zip .
+
+after_success:
+  - curl -X PUT --data-binary @wwwroot.zip -u $AZURE_WA_USERNAME:$AZURE_WA_PASSWORD http://expertslivedemo.scm.azurewebsites.net:443
+
