@@ -11,5 +11,4 @@ script:
   - zip -r wwwroot.zip .
 
 after_success:
-  - curl -X PUT --data-binary @wwwroot.zip -u $AZURE_WA_USERNAME:$AZURE_WA_PASSWORD https://expertslivedemo.scm.azurewebsites.net:443
-
+  - curl -X PUT --data-binary @wwwroot.zip -u $AZURE_WA_USERNAME:$AZURE_WA_PASSWORD https://ExpertsLiveDemo.scm.azurewebsites.net/api/zip/site/wwwroot/
