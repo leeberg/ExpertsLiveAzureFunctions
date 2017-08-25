@@ -7,5 +7,5 @@ if ($req_query_name)
 {
     $name = $req_query_name 
 }
-# TEST
+
 Out-File -Encoding Ascii -FilePath $res -inputObject "Hello - Experts live!"
